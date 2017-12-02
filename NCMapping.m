@@ -4,9 +4,7 @@
 lo = length(lonData);
 la = length(latData);
 day = [ 365 365 365 366 365 365 365 366 365 365 365 366 365 365 365 366];
-% Name = {'OGIday2001','OGIday2002','OGIday2003','OGIday2004','OGIday2005'...
-%     'OGIday2006','OGIday2007','OGIday2008','OGIday2009','OGIday2010','OGIday2011','OGIday2012','OGIday2013'...
-%     'OGIday2014','OGIday20015','OGIday2016'};
+
 OGIday = zeros(lo,la,length(day));
 MWGsday = zeros(lo,la,length(day));
 index1 = 1;
