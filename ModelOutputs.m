@@ -38,7 +38,7 @@ for i = 1:1:Lt
         %%  Main Model
        [Tr,Wr,daily_reparied_wells,wells_missed_ripeness,wells_missed_weather...
     ,prop_cells_unavail,daily_missed_visits,daily_emissions,daily_leaks,...
-    Total_emissions,daily_repaired_leaks,outstanding_wells,freq,dailycell_Emissions,daily_new_leaks] = OGISimulation(T,W,10,60,5000,0.5);
+    Total_emissions,daily_repaired_leaks,outstanding_wells,freq,dailycell_Emissions,daily_new_leaks,cnt] = OGISimulation(T,W,10,60,5000,0.5);
       %Spatial Based
        OGIday = zeros(lo,la,length(day));
        MWGsday = zeros(lo,la,length(day));
