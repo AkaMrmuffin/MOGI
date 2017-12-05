@@ -1,6 +1,6 @@
 function [Tr,Wr,daily_reparied_wells,wells_missed_ripeness,wells_missed_weather...
     ,prop_cells_unavail,daily_missed_visits,daily_emissions,daily_leaks,...
-    Total_emissions,daily_repaired_leaks,outstanding_wells,freq,dailycell_Emissions,daily_new_leaks] = OGISimulation(T,W,Wells_Day,Min_Int,sampnum,wave)
+    Total_emissions,daily_repaired_leaks,outstanding_wells,freq,dailycell_Emissions,daily_new_leaks,cnt] = OGISimulation(T,W,Wells_Day,Min_Int,sampnum,wave)
 %Weather Mapping
 [ freq,Tr,Wr,lonData,latData,timeData ] = WeatherMapping( T,W,wave );
 t = length(timeData);
