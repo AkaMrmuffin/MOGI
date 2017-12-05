@@ -1,0 +1,49 @@
+1) There's a problem with the way MWG is calculated, which means 
+that it's very hard to get values between ~200 and 365. 
+This is because MWG is calculated for a calendar year (Jan to Dec), 
+rather than a "gap year". Thus, if there is only one OGI day, the 
+MWG is likely to be from sometime in summer to the end or beginning 
+of the year, instead of spanning the entire winter. Will need to fix 
+this with a sliding 3-year window or by making each year from 
+June-June, but won't be able to in time for poster.
+
+2) The relationship b/w emissions and MWG isn't that strong. I think 
+there are two reasons for this. 1) MWG isn't being calculated properly 
+(as above), and 2) each point represents emissions per cell, not per well. 
+If you divide this number by the number of wells in that cell it should 
+be more representative. Unfotunately well # was not recorded for each 
+cell during simulations, so won't be able to do that for the poster. 
+However, this should be an easy fix for the future.
+
+3) There's no way to distinguish b/w years with 0, 1, 2, 3, or more 
+LDAR visits. There is no max = 3 LDAR visits for the year, so given 
+the minimum interval of 60 days, it's possible to do up to 6 visits 
+in a year, which shouldn't happen. This needs to be fixed in the future,
+particularly because Emissions vs MWG figure should differentiate between
+these treatments. For this we need a variable like t_since_last_LDAR or
+just record the date of each LDAR survey for each cell somewhere... It 
+would be nice if the "# of visits" cap were a parameter that could be 
+changes so that the model could be run for the US (4 visits)
+
+4) Why is it so hard to get a MWG below ~25??
+
+5) NetCDF files are a pain in the butt to work with, at least I haven't
+been able to figure out a script that easily converts them to TIFF.
+Matlab has a function that writes NetCDF to tiff... since the NetCDF
+files we're using are one dimensional anyways, why not just write straight
+to geoTIFF and skip over writing the files to NetCDF? Would be much easier.
+
+6) Should we record/incorporate real dates into the model instead of 
+just using timesteps?
+
+7) For cell-by-cell data need two more variables: compliance (yes/no),
+which tells whether the wells in that cell have met compliance for the 
+year or not. The second variable needed is number of visits, so we can
+compare cells that didn't meet compliance by not making the required
+number of LDAR visits.
+
+Question: What happens when a cell is not completed in a day? Does it count
+as "visited" and the remaining wells in the cell ignored? Or does the cell
+stay at the top of the priority list? Or does the model just attempt to go
+back to this cell right away, regardless of weather?
+
