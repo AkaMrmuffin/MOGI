@@ -42,6 +42,12 @@ year or not. The second variable needed is number of visits, so we can
 compare cells that didn't meet compliance by not making the required
 number of LDAR visits.
 
+8) For long, multi-threshold simulations, need to get model to save
+appropriately named output files as it goes, perhaps after every 5 
+simulations (~1 million rows). This helps with data processing as 
+files aren't so big and also allows you to run really long simulations
+without the risk of losing everything if the computer crashes.
+
 Question: What happens when a cell is not completed in a day? Does it count
 as "visited" and the remaining wells in the cell ignored? Or does the cell
 stay at the top of the priority list? Or does the model just attempt to go
