@@ -1,8 +1,8 @@
 !) Change the mean and sd of the leak number normal distribution to 6.186 
 and 6.717 respectively. 
 
-!!) Change the leak-size distribution from FWAQS only to the one used by
-Ravikumar et al 2017 in MILES (which contains more studies).
+!!) Change the leak-size distribution from FWAQS only to something more
+representative of Alberta, should better data become available.
 
 1) There's a problem with the way MWG is calculated, which means 
 that it's very hard to get values between ~200 and 365. 
